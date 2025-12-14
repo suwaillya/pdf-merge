@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PDF 合併工具｜純前端、免上傳</title>
+  <meta name="description" content="免費 PDF 合併工具，支援多檔拖曳排序、選擇頁碼範圍、縮圖預覽，純前端合併不需上傳。" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>合併 PDF</h1>
+    <p class="hint">純前端處理，PDF 不會上傳到伺服器。</p>
+
+    <section class="card">
+      <label class="btn">
+        選擇／加入 PDF（可多選）
+        <input id="fileInput" type="file" accept="application/pdf" multiple hidden />
+      </label>
+
+      <div class="row">
+        <label class="field">
+          輸出檔名
+          <input id="outName" type="text" value="merged.pdf" />
+        </label>
+      </div>
+
+      <div class="actions">
+        <button id="mergeBtn" class="primary" disabled>合併並下載</button>
+        <button id="clearBtn" disabled>清除</button>
+      </div>
+
+      <div id="status" class="status"></div>
+    </section>
+
+    <section class="card">
+      <h2>檔案清單（拖曳調整順序）</h2>
+      <div id="list" class="list"></div>
+    </section>
+
+    <footer class="footer">
+      <small>Made for GitHub Pages • Client-side only</small>
+    </footer>
+  </main>
+
+  <!-- pdf-lib -->
+  <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+
+  <!-- pdf.js (thumbnail rendering) -->
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.js"></script>
+
+  <!-- SortableJS -->
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.3/Sortable.min.js"></script>
+
+  <script src="./app.js"></script>
+</body>
+</html>

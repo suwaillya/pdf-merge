@@ -1,0 +1,141 @@
+:root { font-family: system-ui, -apple-system, "Segoe UI", Arial; }
+body { margin: 0; background: #f6f7fb; color: #111; }
+.container { max-width: 980px; margin: 24px auto; padding: 0 16px; }
+.hint { color: #555; margin-top: -6px; }
+
+.card { background: #fff; padding: 16px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,.06); margin: 14px 0; }
+.row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 12px; }
+.field { display: flex; flex-direction: column; gap: 6px; min-width: 240px; flex: 1; }
+.field input { padding: 10px; border-radius: 10px; border: 1px solid #ddd; }
+
+.actions { display: flex; gap: 10px; margin-top: 14px; }
+button { padding: 10px 14px; border-radius: 10px; border: 1px solid #ddd; background: #fff; cursor: pointer; }
+button.primary { background: #2563eb; border-color: #2563eb; color: #fff; }
+button:disabled { opacity: .5; cursor: not-allowed; }
+
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: 10px; border: 1px dashed #bbb; cursor: pointer; user-select: none; }
+.status { margin-top: 10px; color: #333; white-space: pre-wrap; }
+
+.list { display: grid; grid-template-columns: 1fr; gap: 10px; margin-top: 12px; }
+.item { background: #fafafa; border: 1px solid #eee; border-radius: 12px; overflow: hidden; }
+
+.itemHeader {
+  background: #f1f3f6;
+  border-bottom: 1px solid #e7e9ee;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 10px;
+}
+.itemLeft { display:flex; align-items:center; gap:10px; min-width: 0; }
+.badge { font-size: 12px; color:#444; white-space: nowrap; }
+.name {
+  font-size: 12px;
+  color: #333;
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.controls { display: inline-flex; gap: 8px; align-items: center; }
+.iconBtn{
+  width: 28px; height: 28px; padding: 0;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,.12);
+  background: rgba(255,255,255,.92);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+.iconBtn .icon{ width: 16px; height: 16px; display:block; }
+.iconBtn.danger{ color:#b42318; }
+
+.toggleBtn{
+  width: 28px; height: 28px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,.12);
+  background: rgba(255,255,255,.92);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  padding: 0;
+}
+.toggleBtn .chev{
+  width: 16px; height: 16px; display:block;
+  transition: transform .15s ease;
+}
+.item[data-open="1"] .toggleBtn .chev{ transform: rotate(180deg); }
+
+.meta { padding: 10px; font-size: 12px; color:#666; display:flex; gap:10px; flex-wrap:wrap; align-items: center; }
+.meta .pill{
+  padding: 4px 8px;
+  border: 1px solid #e5e7eb;
+  border-radius: 999px;
+  background: #fff;
+  color: #444;
+}
+
+.details{
+  display: none;
+  padding: 12px 10px;
+  border-top: 1px solid #eee;
+  background: #fff;
+}
+.item[data-open="1"] .details{ display: block; }
+
+.rangeRow{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+.rangeField{
+  flex: 1;
+  min-width: 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.rangeField input{
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 13px;
+}
+.rangeHint{ font-size: 12px; color: #666; }
+.err{ font-size: 12px; color: #b42318; }
+.ok{ font-size: 12px; color: #2563eb; }
+
+.thumbs{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 10px;
+}
+.thumbCard{
+  border: 1px solid #eee;
+  border-radius: 12px;
+  background: #fafafa;
+  overflow: hidden;
+}
+.thumbCanvas{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.thumbLabel{
+  padding: 6px 8px;
+  font-size: 12px;
+  color: #444;
+  display:flex;
+  justify-content: space-between;
+}
+.thumbLabel .p{ color:#111; }
+
+.sortable-chosen { box-shadow: 0 12px 30px rgba(0,0,0,.18); transform: scale(1.01); }
+.sortable-ghost { opacity: .35; }
+.sortable-drag { box-shadow: 0 16px 38px rgba(0,0,0,.22); border: 1px solid rgba(37,99,235,.35); background: #fff; }
+
+.footer { text-align: center; color: #666; margin: 18px 0; }
